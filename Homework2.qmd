@@ -8,12 +8,32 @@ Task 1: Basic Vector Practice
 
 ```{r}
 #Creating pre-treatment values
-
 pre<-c(120,151,125,126,115,132,132,129,134,139,127,122,127,135,133,128,147,138,140,132)
 
 #Creating post-treatment values
 post<-c(127,145,135,122,115,122,123,126,126,129,132,146,120,114,121,120,128,120,133,115)
 
+#Assigning attributes to vectors
 paste("Subject",1:20,sep="_")
+
+names(pre)<-paste("Subject",1:20,sep="_")
+
+names(post)<-paste("Subject",1:20,sep="_")
+
+#Calculating Change in BP vector
+chg<-c(pre-post)
+
+#Average decrease in BP
+mean(chg)
+
+#Determining who has a decrease in BP
+which(chg>0)
+
+#Subsetting Vector
+chg[chg>0]
+
+#Calculating Average decrease for those who had positive change
+
+mean(chg[chg>0])
 ```
 
