@@ -1,0 +1,19 @@
+---
+title: "Base R"
+format: html
+editor: visual
+---
+
+Task 1: Basic Vector Practice
+
+```{r}
+#Creating pre-treatment values
+
+pre<-c(120,151,125,126,115,132,132,129,134,139,127,122,127,135,133,128,147,138,140,132)
+
+#Creating post-treatment values
+post<-c(127,145,135,122,115,122,123,126,126,129,132,146,120,114,121,120,128,120,133,115)
+
+paste("Subject",1:20,sep="_")
+```
+
