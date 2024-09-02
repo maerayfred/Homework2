@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-Task 1: Basic Vector Practice
+## Task 1: Basic Vector Practice
 
 ```{r}
 #Creating pre-treatment values
@@ -35,5 +35,16 @@ chg[chg>0]
 #Calculating Average decrease for those who had positive change
 
 mean(chg[chg>0])
+```
+
+## Task 2: Basic Data Frame Practice
+
+```{r}
+#Creating Data Frame
+all<-data.frame(pre_bp=pre,post_bp=post,diff_bp=chg)
+
+
+#Subsetting on rows where change in BP is negative
+all$diff_bp[all$diff_bp<0]
 ```
 
