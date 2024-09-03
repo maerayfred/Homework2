@@ -54,3 +54,19 @@ all
 knitr::kable(all)
 ```
 
+##Task3 List Practice
+
+```{r}
+pretreat<-c(138,135,147,117,152,134,114,121,131,130)
+
+posttreat<-c(105,136,123,130,134,143,135,139,120,124)
+
+names(pretreat)<-paste("Subject",1:10,sep="_")
+
+names(posttreat)<-paste("Subject",1:10,sep="_")
+
+all2<-data.frame(pre_treat=pretreat,post_treat=posttreat,tf=ifelse(all2$post_treat<120,"True","False"))
+
+
+```
+
