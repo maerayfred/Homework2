@@ -46,5 +46,11 @@ all<-data.frame(pre_bp=pre,post_bp=post,diff_bp=chg)
 
 #Subsetting on rows where change in BP is negative
 all$diff_bp[all$diff_bp<0]
+
+all<-data.frame(pre_bp=pre,post_bp=post,diff_bp=chg,tf=ifelse(all$post_bp<120,'TRUE','FALSE'))
+
+all
+
+knitr::kable(all)
 ```
 

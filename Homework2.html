@@ -96,7 +96,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Task 1: Basic Vector Practice</p>
+<section id="task-1-basic-vector-practice" class="level2">
+<h2 class="anchored" data-anchor-id="task-1-basic-vector-practice">Task 1: Basic Vector Practice</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Creating pre-treatment values</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pre<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">120</span>,<span class="dv">151</span>,<span class="dv">125</span>,<span class="dv">126</span>,<span class="dv">115</span>,<span class="dv">132</span>,<span class="dv">132</span>,<span class="dv">129</span>,<span class="dv">134</span>,<span class="dv">139</span>,<span class="dv">127</span>,<span class="dv">122</span>,<span class="dv">127</span>,<span class="dv">135</span>,<span class="dv">133</span>,<span class="dv">128</span>,<span class="dv">147</span>,<span class="dv">138</span>,<span class="dv">140</span>,<span class="dv">132</span>)</span>
@@ -151,6 +152,47 @@ Subject_20
 <pre><code>[1] 10.6</code></pre>
 </div>
 </div>
+</section>
+<section id="task-2-basic-data-frame-practice" class="level2">
+<h2 class="anchored" data-anchor-id="task-2-basic-data-frame-practice">Task 2: Basic Data Frame Practice</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Creating Data Frame</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>all<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">pre_bp=</span>pre,<span class="at">post_bp=</span>post,<span class="at">diff_bp=</span>chg)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Subsetting on rows where change in BP is negative</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>all<span class="sc">$</span>diff_bp[all<span class="sc">$</span>diff_bp<span class="sc">&lt;</span><span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  -7 -10  -5 -24</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>all<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">pre_bp=</span>pre,<span class="at">post_bp=</span>post,<span class="at">diff_bp=</span>chg,<span class="at">tf=</span><span class="fu">ifelse</span>(all<span class="sc">$</span>post_bp<span class="sc">&lt;</span><span class="dv">120</span>,<span class="st">'TRUE'</span>,<span class="st">'FALSE'</span>))</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>all</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           pre_bp post_bp diff_bp    tf
+Subject_1     120     127      -7 FALSE
+Subject_2     151     145       6 FALSE
+Subject_3     125     135     -10 FALSE
+Subject_4     126     122       4 FALSE
+Subject_5     115     115       0  TRUE
+Subject_6     132     122      10 FALSE
+Subject_7     132     123       9 FALSE
+Subject_8     129     126       3 FALSE
+Subject_9     134     126       8 FALSE
+Subject_10    139     129      10 FALSE
+Subject_11    127     132      -5 FALSE
+Subject_12    122     146     -24 FALSE
+Subject_13    127     120       7 FALSE
+Subject_14    135     114      21  TRUE
+Subject_15    133     121      12 FALSE
+Subject_16    128     120       8 FALSE
+Subject_17    147     128      19 FALSE
+Subject_18    138     120      18 FALSE
+Subject_19    140     133       7 FALSE
+Subject_20    132     115      17  TRUE</code></pre>
+</div>
+</div>
+</section>
 
 </main>
 <!-- /main column -->
