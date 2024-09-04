@@ -54,7 +54,7 @@ all
 knitr::kable(all)
 ```
 
-##Task3 List Practice
+## Task3 List Practice
 
 ```{r}
 #Creating Pre Treatment
@@ -66,8 +66,10 @@ names(pretreat)<-paste("Subject",1:10,sep="_")
 
 names(posttreat)<-paste("Subject",1:10,sep="_")
 
+
+
 #Creating second data frame
-all2<-data.frame(pre_treat=pretreat,post_treat=posttreat,tf=ifelse(all2$post_treat<120,"True","False"))
+all2<-data.frame(pre_treat=pretreat,post_treat=posttreat,tf=ifelse(posttreat<120,'TRUE','FALSE'))
 
 #Creating List
 final<-list(Treatment=all,Placebo=all2)
