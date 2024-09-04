@@ -57,16 +57,31 @@ knitr::kable(all)
 ##Task3 List Practice
 
 ```{r}
+#Creating Pre Treatment
 pretreat<-c(138,135,147,117,152,134,114,121,131,130)
-
+#Creating Post Treatment
 posttreat<-c(105,136,123,130,134,143,135,139,120,124)
 
 names(pretreat)<-paste("Subject",1:10,sep="_")
 
 names(posttreat)<-paste("Subject",1:10,sep="_")
 
+#Creating second data frame
 all2<-data.frame(pre_treat=pretreat,post_treat=posttreat,tf=ifelse(all2$post_treat<120,"True","False"))
 
+#Creating List
+final<-list(Treatment=all,Placebo=all2)
+
+#Accessing Lists 3 ways
+final[1]
+
+final$Treatment
+
+final[[1]]
+
+#Accessing Pre-BP from Placebo
+
+final[[2]][1]
 
 ```
 
